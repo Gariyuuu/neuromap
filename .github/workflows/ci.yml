@@ -20,5 +20,6 @@ jobs:
       - name: Install minimal test dependencies
         run: |
           pip install numpy pandas scipy scikit-learn statsmodels pytest pyarrow
+          pip install torch --index-url https://download.pytorch.org/whl/cpu
       - name: Run tests
         run: python -m pytest tests/ -v

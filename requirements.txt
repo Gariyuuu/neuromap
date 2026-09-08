@@ -1,15 +1,19 @@
+# Pinned to the exact versions used to generate the canonical results in results/ and
+# the manuscript in paper/paper.md (see results/RELEASE.json for the git SHA these
+# correspond to).
 setuptools<81
 allensdk==2.16.2
 statsmodels==0.13.5
-torch
-torchvision
-scikit-learn
-scipy
+numpy==1.26.4
+pandas==1.5.3
+scipy==1.10.1
+scikit-learn==1.9.0
+torch==2.14.0
+torchvision==0.29.0
 pyyaml
 matplotlib
 seaborn
 pillow
 tqdm
 pyarrow
-pandas
-numpy
+pytest

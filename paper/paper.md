@@ -235,6 +235,44 @@ reports for this species. Whichever model is called "best" depends materially on
 and similarity metric. We take that instability, not a leaderboard entry, to be this project's
 main empirical contribution.
 
+## References
+
+- Bo, W., Soni, A., Srivastava, S., & Khosla, M. (2024). *On the Fragility of Brain-Similarity
+  Metrics for Deep Neural Networks*. arXiv:2411.14633.
+- Cadena, S. A., Denfield, G. H., Walker, E. Y., Gatys, L. A., Tolias, A. S., Bethge, M., &
+  Ecker, A. S. (2019). Deep convolutional models improve predictions of macaque V1 responses to
+  natural images. *PLOS Computational Biology*, 15(4).
+- Cadieu, C. F., Hong, H., Yamins, D. L. K., Pinto, N., Ardila, D., Solomon, E. A., Majaj, N. J.,
+  & DiCarlo, J. J. (2014). Deep neural networks rival the representation of primate IT cortex for
+  core visual object recognition. *PLOS Computational Biology*, 10(12).
+- Cowley, B. R., Stan, P. L., Pillow, J. W., & Smith, M. A. (2026). Compact deep neural network
+  models of the visual cortex. *Nature*.
+- Nayebi, A., Sagastuy-Brena, J., Bear, D. M., Kar, K., Kubilius, J., Ganguli, S., Sussillo, D.,
+  DiCarlo, J. J., & Yamins, D. L. K. Mouse visual cortex as a limited resource system that
+  self-learns an ecologically-general representation. (bioRxiv / PLOS Computational Biology.)
+- Schrimpf, M., Kubilius, J., Hong, H., Majaj, N. J., Rajalingham, R., Issa, E. B., Kar, K.,
+  Bashivan, P., Prescott-Roy, J., Geiger, F., Schmidt, K., Yamins, D. L. K., & DiCarlo, J. J.
+  (2018/2020). Brain-Score: Which Artificial Neural Network for Object Recognition is most
+  Brain-Like? *bioRxiv* (2018); integrative benchmarking framework further described in
+  *Neuron* (2020).
+- Sexton, N. J., & Love, B. C. (2022). Reassessing hierarchical correspondences between brain and
+  deep networks through direct interface. *Science Advances*, 8(28).
+- Shi, J., Shea-Brown, E., & Buice, M. (2019). Comparison Against Task Driven Artificial Neural
+  Networks Reveals Functional Properties of Mouse Visual Cortex. *NeurIPS 2019*.
+- Siegle, J. H., Jia, X., Durand, S., et al. (2021). Survey of spiking in the mouse visual system
+  reveals functional hierarchy. *Nature*, 592, 86–92.
+- Soni, A., Srivastava, S., Kording, K., & Khosla, M. (2024). Conclusions about Neural Network to
+  Brain Alignment are Profoundly Impacted by the Similarity Measure. *bioRxiv*.
+- Yamins, D. L. K., Hong, H., Cadieu, C. F., Solomon, E. A., Seibert, D., & DiCarlo, J. J. (2014).
+  Performance-optimized hierarchical models predict neural responses in higher visual cortex.
+  *PNAS*, 111(23), 8619–8624.
+
+These citations were verified by an independent literature-review pass (see
+`docs/novelty_memo.md`) via web search against publisher/preprint listings; none were generated
+from memory alone. Exact venue/year details for the Nayebi et al. and Schrimpf et al. entries
+reflect what could be confirmed at review time (bioRxiv preprint vs. later peer-reviewed venue) —
+treat page/volume numbers not given above as unconfirmed rather than omitted by accident.
+
 ---
 
 *Data, code, and frozen results: see the project repository. Reproduction commands in
