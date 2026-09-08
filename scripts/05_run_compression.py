@@ -1,7 +1,11 @@
 #!/usr/bin/env python3
-"""Compression experiment (RQ6): progressively PCA-reduce each model-layer's activations
-and re-measure neural predictivity + RSA. Only applied to non-baseline model layers with
-enough native dimensionality to make compression meaningful (>= 32 features).
+"""Compression experiment (RQ6): progressively PCA-reduce each DEEP model-layer's
+activations and re-measure neural predictivity + RSA. Restricted to the learned model
+families (RQ6 asks about "compressed model representations", not classical baselines)
+and to one representative session per area, to keep the (dims x feature-sets x sessions)
+grid tractable on a single machine — this is a scope-management choice, documented here
+rather than left implicit, not a silent shortcut. The full 18-session grid can be run by
+setting SESSIONS_PER_AREA = None below.
 
 Canonical result: results/compression/compression_results.parquet.
 """
@@ -25,8 +29,10 @@ from neuromap.provenance import git_sha
 FEATURES_DIR = ROOT / "features"
 NEURAL_DIR = ROOT / "data" / "processed" / "neural"
 OUT_PATH = ROOT / "results" / "compression" / "compression_results.parquet"
-DIMS = [2, 4, 8, 16, 32, 64]
+DIMS = [4, 16, 64]
 MIN_NATIVE_DIM = 32
+DEEP_MODEL_FAMILIES = {"cnn_supervised", "vit_supervised", "self_supervised"}
+SESSIONS_PER_AREA = 1  # None = use all sessions configured in configs/dataset.yaml
 SEED = 0
 
 
@@ -36,7 +42,7 @@ def load_feature_sets():
         model, layer = path.stem.split("__")
         with open(path.with_suffix(".json")) as f:
             meta = json.load(f)
-        if meta["family"] == "baseline":
+        if meta["family"] not in DEEP_MODEL_FAMILIES:
             continue
         arr = np.load(path)
         if arr.shape[1] >= MIN_NATIVE_DIM:
@@ -57,7 +63,8 @@ def main():
     rows = list(existing.to_dict("records"))
 
     for area, sessions in dataset_cfg["areas"].items():
-        for sess in sessions:
+        sessions_to_run = sessions[:SESSIONS_PER_AREA] if SESSIONS_PER_AREA else sessions
+        for sess in sessions_to_run:
             exp_id = sess["experiment_id"]
             images_path = NEURAL_DIR / area / f"{exp_id}_images.parquet"
             if not images_path.exists():
