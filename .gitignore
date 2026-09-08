@@ -1,0 +1,18 @@
+.venv/
+__pycache__/
+*.pyc
+.DS_Store
+
+# large / regenerable data — never committed, only manifests + hashes are
+data/raw/
+data/processed/
+features/*.npy
+models/cache/
+cache/
+node_modules/
+site/.next/
+site/out/
+site/node_modules/
+
+# regenerable results (kept small ones as canonical release artifacts explicitly)
+results/*.tmp

@@ -1,0 +1,14 @@
+{
+  "model": "dino_vits16",
+  "layer": "block8",
+  "shape": [
+    118,
+    384
+  ],
+  "feature_hash": "9127255feced7925",
+  "git_sha": "unknown",
+  "family": "self_supervised",
+  "weights_id": "dino_deitsmall16_pretrain",
+  "task_objective": "self_supervised_dino",
+  "stimulus_hash": "003f1b4ff0411071"
+}

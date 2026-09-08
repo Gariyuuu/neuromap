@@ -1,0 +1,14 @@
+{
+  "model": "vit_b_16",
+  "layer": "block8",
+  "shape": [
+    118,
+    768
+  ],
+  "feature_hash": "1b5c22d16795b441",
+  "git_sha": "unknown",
+  "family": "vit_supervised",
+  "weights_id": "IMAGENET1K_V1",
+  "task_objective": "imagenet_classification",
+  "stimulus_hash": "003f1b4ff0411071"
+}

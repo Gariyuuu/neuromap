@@ -1,0 +1,14 @@
+{
+  "model": "resnet18",
+  "layer": "layer4",
+  "shape": [
+    118,
+    512
+  ],
+  "feature_hash": "f9e4ca465e0d3a95",
+  "git_sha": "unknown",
+  "family": "cnn_supervised",
+  "weights_id": "IMAGENET1K_V1",
+  "task_objective": "imagenet_classification",
+  "stimulus_hash": "003f1b4ff0411071"
+}
