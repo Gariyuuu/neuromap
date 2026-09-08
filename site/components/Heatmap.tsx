@@ -1,4 +1,4 @@
-import { MODEL_LABELS } from "@/lib/data";
+import { MODEL_LABELS } from "@/lib/constants";
 
 function colorForValue(v: number, min: number, max: number) {
   const t = max > min ? (v - min) / (max - min) : 0.5;

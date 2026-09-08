@@ -1,0 +1,24 @@
+name: CI
+
+# Runs the test suite against tiny synthetic fixtures only (tests/test_neural_synthetic.py
+# fabricates a fake AllenSDK dataset object in-memory). No real neuroscience data, model
+# weights, or Allen Brain Observatory sessions are downloaded in CI.
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+      - name: Install minimal test dependencies
+        run: |
+          pip install numpy pandas scipy scikit-learn statsmodels pytest pyarrow
+      - name: Run tests
+        run: python -m pytest tests/ -v

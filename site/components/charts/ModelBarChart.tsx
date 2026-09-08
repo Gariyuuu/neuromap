@@ -3,7 +3,7 @@
 import {
   BarChart, Bar, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContainer, ErrorBar, Cell,
 } from "recharts";
-import { MODEL_LABELS, MODEL_FAMILY_COLOR } from "@/lib/data";
+import { MODEL_LABELS, MODEL_FAMILY_COLOR } from "@/lib/constants";
 
 export type ModelBarDatum = { model: string; family: string; mean: number; std: number };
 
@@ -29,7 +29,7 @@ export function ModelBarChart({ data }: { data: ModelBarDatum[] }) {
         <YAxis tick={{ fill: "#8b96a3", fontSize: 11 }} label={{ value: "Mean encoding r", angle: -90, fill: "#8b96a3", fontSize: 11 }} />
         <Tooltip
           contentStyle={{ background: "#12161b", border: "1px solid #232a32", fontSize: 12 }}
-          formatter={(value: number) => value.toFixed(4)}
+          formatter={(value) => (typeof value === "number" ? value.toFixed(4) : value)}
         />
         <Bar dataKey="mean" radius={[4, 4, 0, 0]}>
           {chartData.map((d, i) => (

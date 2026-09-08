@@ -1,4 +1,4 @@
-.PHONY: setup data features-smoke encode-smoke benchmark rsa compression analyze figures paper site test
+.PHONY: setup data features-smoke encode-smoke benchmark rsa compression analyze figures paper site test release
 
 VENV = .venv/bin/python3
 
@@ -42,3 +42,6 @@ paper:
 
 test:
 	$(VENV) -m pytest tests/ -v
+
+release:
+	$(VENV) scripts/11_freeze_release.py
