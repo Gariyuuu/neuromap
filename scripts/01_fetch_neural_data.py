@@ -75,7 +75,16 @@ def main():
                 continue
 
             print(f"[fetch] {area}/{exp_id}")
-            ds = boc.get_ophys_experiment_data(exp_id)
+            ds = None
+            for attempt in range(5):
+                try:
+                    ds = boc.get_ophys_experiment_data(exp_id)
+                    break
+                except Exception as e:
+                    print(f"    retry {attempt+1}/5 after error: {e}")
+            if ds is None:
+                print(f"    giving up on {exp_id} this run, will retry on next invocation")
+                continue
 
             if stim_hashes is None:
                 stim_hashes = extract_stimulus_images(ds, stim_out)

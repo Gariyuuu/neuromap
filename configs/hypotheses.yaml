@@ -1,0 +1,52 @@
+# Pre-registered hypotheses, written before the canonical (full 18-session, 6-model) runs.
+# The vertical slice (1 session, VISp, pixels+resnet18) was exploratory and is not used to
+# tune these hypotheses post hoc.
+primary_research_question: RQ5
+primary_hypothesis: H4
+secondary_hypothesis: H6
+
+hypotheses:
+  H1:
+    text: Pretrained vision models outperform pixel features for neural encoding.
+    test: paired permutation test, mean_r(best pretrained model) vs mean_r(pixels), per session, FDR-corrected across areas.
+    prediction: reject null (pretrained > pixels) in most areas; NOT expected to hold uniformly given
+      the mouse-cortex literature (Shi et al. 2019, Nayebi et al.) showing ImageNet-CNNs are a
+      relatively poor fit for mouse visual cortex compared to primate.
+  H2:
+    text: Layer-depth ordering correlates with cortical hierarchy (early areas <-> early layers).
+    test: for each model, Spearman correlation between layer depth and each area's best-r layer index.
+    prediction: weak or absent correlation, given mouse cortex's known flat functional hierarchy
+      (Siegle et al. 2021) relative to primate ventral stream — treated as a genuine empirical
+      question, not assumed.
+  H3:
+    text: Self-supervised models (DINO ViT-S/16) achieve neural alignment competitive with the
+      matched-architecture supervised model (ViT-B/16) despite a different training objective.
+    test: compare mean_r(dino_vits16) vs mean_r(vit_b_16), paired by session.
+  H4:
+    text: (primary) Model rankings for neural alignment are NOT stable across metrics
+      (ridge-encoding vs RSA vs CKA), stimulus-derived areas, and sessions.
+    test: Kendall's W and pairwise Spearman agreement on rank matrices (scripts/06_ranking_stability.py).
+      W substantially below 1.0 (informally, W < 0.7) is treated as support for instability.
+  H5:
+    text: Compression (PCA to <=64 dims) can preserve most neural predictivity despite
+      substantial dimensionality reduction from native activation dimensionality.
+    test: compression_results.parquet — mean_r at d=32/64 vs full model mean_r, per model/layer/session.
+  H6:
+    text: (secondary/exploratory, see docs/novelty_memo.md) ImageNet top-1 accuracy does not
+      strongly predict mean neural encoding score across supervised CNN/ViT models.
+    test: Spearman correlation, ImageNet top-1 accuracy vs mean_r, across {resnet18, resnet50, vit_b_16}.
+      n=3 models: treat this as a weakly powered, exploratory check, not a confirmatory test.
+
+statistics:
+  bootstrap_n: 1000-2000 depending on analysis (see neuromap/stats.py, neuromap/rsa.py)
+  multiple_comparisons: Benjamini-Hochberg FDR across areas/models where multiple comparisons are run
+  aggregation_level: session (subject) level for any confirmatory claim; per-neuron distributions reported descriptively only
+
+known_limitations_acknowledged_in_advance:
+  - n=3 sessions/area is a small sample for subject-level bootstrap; CIs will be wide.
+  - RQ4/H6 has only 3 supervised models with known ImageNet accuracy — underpowered, exploratory only.
+  - natural_scenes has no category metadata in AllenSDK, so stimulus-level failure analysis
+    is done at the individual-image level, not by semantic category.
+  - linear ridge encoding with PCA-50 may underestimate the true ceiling of very high-dimensional
+    layers (e.g. resnet50 avgpool, 2048-d) relative to what a more flexible mapping could achieve;
+    this is a deliberate choice (project spec: avoid overly flexible mappings obscuring comparison).

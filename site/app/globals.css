@@ -1,0 +1,60 @@
+@import "tailwindcss";
+@plugin "@tailwindcss/typography";
+
+:root {
+  --bg: #0b0d10;
+  --bg-panel: #12161b;
+  --bg-panel-2: #171c22;
+  --border: #232a32;
+  --fg: #e6ebf0;
+  --fg-dim: #8b96a3;
+  --fg-dimmer: #5c6672;
+  --accent-neural: #3ecf8e;   /* biological / measured */
+  --accent-model: #6ea8fe;    /* artificial / predicted */
+  --accent-warn: #e0a458;
+  --accent-danger: #e0685f;
+  --mono: "SF Mono", ui-monospace, "JetBrains Mono", Menlo, monospace;
+  --sans: -apple-system, BlinkMacSystemFont, "Inter", "Segoe UI", sans-serif;
+}
+
+* { box-sizing: border-box; }
+
+html, body {
+  background: var(--bg);
+  color: var(--fg);
+  font-family: var(--sans);
+  -webkit-font-smoothing: antialiased;
+}
+
+.font-mono { font-family: var(--mono); }
+
+.panel {
+  background: var(--bg-panel);
+  border: 1px solid var(--border);
+  border-radius: 10px;
+}
+
+.panel-2 { background: var(--bg-panel-2); }
+
+.grid-lab-bg {
+  background-image:
+    linear-gradient(rgba(255,255,255,0.02) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255,255,255,0.02) 1px, transparent 1px);
+  background-size: 24px 24px;
+}
+
+a { color: inherit; }
+
+.text-dim { color: var(--fg-dim); }
+.text-dimmer { color: var(--fg-dimmer); }
+.text-neural { color: var(--accent-neural); }
+.text-model { color: var(--accent-model); }
+.border-hairline { border-color: var(--border); }
+
+table { border-collapse: collapse; width: 100%; }
+th, td { padding: 6px 10px; text-align: left; border-bottom: 1px solid var(--border); }
+th { color: var(--fg-dim); font-weight: 500; font-size: 12px; text-transform: uppercase; letter-spacing: 0.04em; }
+
+::selection { background: rgba(62, 207, 142, 0.3); }
+
+.scrollx { overflow-x: auto; }
