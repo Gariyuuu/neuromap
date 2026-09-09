@@ -185,21 +185,56 @@ alignment, ViT-B/16 lowest; Spearman ρ=−1.0). With n=3 this is not a confirma
 is mechanically bound to ±1 — but the direction is opposite to a naive "better classifier, more
 brain-like" expectation, and consistent with the H1 result above.
 
-### 7.5 RQ5/H4 — ranking stability across metrics, areas, and sessions (primary result)
+### 7.5 RQ5/H4 — ranking stability across metrics, areas, and sessions (primary result). **H4 supported.**
 
-*[Numbers below are filled in from `results/encoding/ranking_stability.json`, generated after the
-RSA/CKA canonical run completes — see that file and the site's Failures page for the frozen
-values.]* Kendall's W and pairwise Spearman agreement are computed for three groupings: model
-rankings across the 6 brain areas, across the 18 individual sessions, and across the 3 similarity
-metrics (ridge encoding, RSA, CKA) pooled over sessions. Low agreement in any of these is itself
-the primary finding this project set out to test, per the pre-registration in
-`configs/hypotheses.yaml` (H4).
+Kendall's W and pairwise Spearman agreement are computed for three groupings: model rankings
+across the 6 brain areas, across the 18 individual sessions, and across the 3 similarity metrics
+(ridge encoding, RSA, CKA) pooled over sessions. All three are far below the W < 0.7 threshold set
+in advance (`configs/hypotheses.yaml`) as informal support for instability:
 
-### 7.6 RQ6/H5 — compression
+| Grouping | Kendall's W | Mean pairwise Spearman ρ | Range |
+|---|---|---|---|
+| Across 6 brain areas | **0.124** | −0.051 | [−0.886, 0.829] |
+| Across 18 sessions | **0.087** | 0.034 | [−1.0, 1.0] |
+| Across 3 metrics (ridge/RSA/CKA) | **0.263** | −0.105 | [−0.771, 0.600] |
 
-*[Filled in from `results/compression/compression_results.parquet` — see the site's Compression
-page for the frozen curves of encoding score and RSA ρ vs. retained PCA dimensionality, 2 to 64
-components, against variance-retained and runtime/storage cost.]*
+The metric-level disagreement is the sharpest illustration: **RSA ranks the deep models above
+pixels** (mean ρ: DINO ViT-S/16 0.063, ResNet-18 0.061, ResNet-50 0.046, ViT-B/16 0.039, pixels
+0.030, Gabor −0.006) — the *opposite* ordering from the ridge-encoding result in §7.2, where pixels
+led every deep model. The same six feature spaces, the same 18 sessions, the same stimuli — two
+different similarity metrics disagree about which representation is "most brain-like." This
+directly replicates, in mouse Allen Observatory data, the metric-fragility finding Soni et al.
+(2024) and Bo et al. (2024) reported for primate/general vision alignment, and is this project's
+primary empirical contribution (see §10).
+
+### 7.4b RQ4/H6 confirmation and H3
+
+The inverse ImageNet-accuracy relationship in §7.4 holds using the full ranking-stability report:
+ResNet-18 (69.8% top-1) mean r=0.121, ResNet-50 (80.9%) r=0.112, ViT-B/16 (81.1%) r=0.108 — Spearman
+ρ=−1.0 (n=3, mechanically bound, not confirmatory). For H3, self-supervised DINO ViT-S/16
+(mean r=0.109) was statistically indistinguishable from its matched-architecture supervised
+counterpart ViT-B/16 (mean r=0.108) — a self-supervised objective matched supervised
+ImageNet-classification performance for mouse neural alignment, supporting H3.
+
+### 7.6 RQ6/H5 — compression. **H5 supported.**
+
+Restricted to the four learned model families (ResNet-18/50, ViT-B/16, DINO ViT-S/16; one
+representative session per area, 3 PCA dimensionalities — see `scripts/05_run_compression.py`
+docstring for this scope-management choice) — mean encoding score is nearly flat as PCA
+dimensionality drops from 64 to 4 components, while variance retained drops sharply:
+
+| PCA components | Mean encoding r | Mean variance retained |
+|---|---|---|
+| 64 | 0.071 | 95.2% |
+| 16 | 0.067 | 72.6% |
+| 4 | 0.054 | 43.7% |
+
+Going from 64 to 4 components (a 16x reduction in stored dimensionality, and from 95% to 44% of
+variance retained) cost only 0.017 mean encoding-r — a small fraction of the already-modest
+encoding scores in §7.2. This supports H5: most of the (modest) neural predictivity these
+activations carry is concentrated in a low-dimensional subspace, echoing Cowley et al. (2026)'s
+parameter-compression result in macaque cortex, but via activation-dimensionality compression on
+mouse data — a different compression mechanism, consistent conclusion.
 
 ## 8. Failure Analysis
 

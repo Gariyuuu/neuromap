@@ -1,0 +1,580 @@
+{
+  "git_sha": "a9fa3a0b514f5dfa5a65cba29063854d8af2f338",
+  "git_sha_short": "a9fa3a0",
+  "neural_data_manifest": {
+    "dataset": "allen_brain_observatory_visual_coding_2p",
+    "source": "AllenSDK BrainObservatoryCache (public, no auth, CC BY 4.0 Allen Institute Terms of Use)",
+    "stimulus": "natural_scenes",
+    "preprocessing_config": {
+      "response_offset_frames": 2,
+      "response_len_frames": 7,
+      "blank_frame": -1,
+      "trial_aggregation": "mean_dff_in_window",
+      "image_aggregation": "mean_over_repeats",
+      "reliability_method": "split_half_spearman_brown"
+    },
+    "stimulus_image_hashes": {
+      "0": "d3368e7e92fe680f",
+      "1": "8eede798b8fa45b0",
+      "2": "003c1bf2acacf68b",
+      "3": "543f2f5d78218d9e",
+      "4": "7ca594c05aadb262",
+      "5": "2f5c6cb4f12a22b6",
+      "6": "51fa252ce8067a03",
+      "7": "4a15e98091611751",
+      "8": "59df12c8c624295d",
+      "9": "59a85dba4f2b19df",
+      "10": "bab2019a44a16d52",
+      "11": "0d351f7fda6c85ef",
+      "12": "a165fe85a80b0544",
+      "13": "12506842b331eb0e",
+      "14": "d6b7f041132d6c5e",
+      "15": "47dddd17861a078f",
+      "16": "5d1e787af3ff9410",
+      "17": "af761187830cc5b9",
+      "18": "6bcbaab5eadfe82e",
+      "19": "6f2509433b75ffde",
+      "20": "aedbdf76e15ea744",
+      "21": "fab007e207c30e3d",
+      "22": "cf55cdd9d20b6be9",
+      "23": "8ea14d5e81852adf",
+      "24": "71df241c553e06c5",
+      "25": "9832957e68c133bf",
+      "26": "324e7461c94a2186",
+      "27": "cf94eb02db161f0f",
+      "28": "ae3f66f5e01d5208",
+      "29": "211e0979ff69480f",
+      "30": "fbe3e3021a02bb1e",
+      "31": "5447108c16eeb201",
+      "32": "cd547658ad6b1ef0",
+      "33": "592833f3c94c98fd",
+      "34": "a0d03da39ace0a9f",
+      "35": "9113d1ffcb35f5ee",
+      "36": "cfc4b3d6bd6920e5",
+      "37": "aa5d5135047c42e4",
+      "38": "afa792f06d0f7177",
+      "39": "c6a86ffd338d1778",
+      "40": "7a9350ec4887a0b0",
+      "41": "e88015088efa4b75",
+      "42": "81181ebe5c10c905",
+      "43": "e555eb91606120f8",
+      "44": "e9ba70087abac7ea",
+      "45": "ed9bec0ed997c7cd",
+      "46": "ce96932ab346d266",
+      "47": "f51362706097586e",
+      "48": "5b1aaa311a654e5f",
+      "49": "56ce68ade1e93404",
+      "50": "ab105ec94956f36e",
+      "51": "390ae27139fb35ac",
+      "52": "f713586cb36232c6",
+      "53": "b3699544a03609bd",
+      "54": "14fcfbcc23194586",
+      "55": "0b820a6af79589f8",
+      "56": "c516cd01302df380",
+      "57": "c1f4a5c5c9362345",
+      "58": "d8f786e45cf565f5",
+      "59": "0e906f29f9faa53f",
+      "60": "8ff7fe99deb79ca3",
+      "61": "1d7883fa6539cc39",
+      "62": "65655a0033b2c055",
+      "63": "a18bfcef10d5f095",
+      "64": "8ee7f00f46296a30",
+      "65": "230ce1d0f56054bb",
+      "66": "8ae8e7617b3e57be",
+      "67": "5f486ce1cc2359e8",
+      "68": "97031ff4b2e4971b",
+      "69": "04138a51ec0db729",
+      "70": "f76191a4b0920b38",
+      "71": "a1009a6fdbec0233",
+      "72": "94245efac975c55e",
+      "73": "b1e688266b76ffba",
+      "74": "67f3ab368ce8ca51",
+      "75": "996e80c1fd6b3042",
+      "76": "098c2ebbde84093a",
+      "77": "a8b94cf8b38cbb63",
+      "78": "872b629c479919e2",
+      "79": "281d0fb395f26169",
+      "80": "7939d27db0113bf6",
+      "81": "e60aade24b0d4d5b",
+      "82": "f50404434fc430ef",
+      "83": "e8a5758469b3f3e0",
+      "84": "359d1e29cc3b0dee",
+      "85": "0bab2dda27dd97b7",
+      "86": "6f7b3dc5dcf5ecf9",
+      "87": "aa896b62e48cfeba",
+      "88": "2cc6e24125eb3a01",
+      "89": "ee74c26d236a87f7",
+      "90": "a653eab7c61b88e1",
+      "91": "97cf232b122704c7",
+      "92": "616b8d5ec83516ab",
+      "93": "09878a78965a2e5a",
+      "94": "942e82176053e9ce",
+      "95": "614ae8d6dd2483ed",
+      "96": "59caf62f5413249e",
+      "97": "815953b54b3aab2c",
+      "98": "47325707656077f6",
+      "99": "443064d5f5760236",
+      "100": "0a77bd194892522c",
+      "101": "eb3ba48ace08588a",
+      "102": "0ca228ea85702c13",
+      "103": "1c81b5a8b229baf3",
+      "104": "bdc0863fb8115416",
+      "105": "c7af53a8737cb565",
+      "106": "9440d879425b7bfd",
+      "107": "6afc9378e649a399",
+      "108": "dd05591a569773ab",
+      "109": "64f4bd3c268a460f",
+      "110": "aefbf2af54e893bc",
+      "111": "3f36acc27f13a51b",
+      "112": "001d2557e0d5fdb8",
+      "113": "ebb71a3af3d32e10",
+      "114": "ce74e93ca44bc5dc",
+      "115": "ddc5fd979381f3cb",
+      "116": "177a9d554dbe532a",
+      "117": "a3224cfcdcc4dd2c"
+    },
+    "sessions": [
+      {
+        "area": "VISp",
+        "experiment_id": 500860585,
+        "n_cells": 155,
+        "n_trials": 5950
+      },
+      {
+        "area": "VISp",
+        "experiment_id": 500964514,
+        "n_cells": 214,
+        "n_trials": 5950
+      },
+      {
+        "area": "VISp",
+        "experiment_id": 501498760,
+        "n_cells": 212,
+        "n_trials": 5950
+      },
+      {
+        "area": "VISl",
+        "experiment_id": 501800164,
+        "n_cells": 137,
+        "n_trials": 5950
+      },
+      {
+        "area": "VISl",
+        "experiment_id": 502526200,
+        "n_cells": 175,
+        "n_trials": 5950
+      },
+      {
+        "area": "VISl",
+        "experiment_id": 503538804,
+        "n_cells": 201,
+        "n_trials": 5950
+      },
+      {
+        "area": "VISal",
+        "experiment_id": 501889084,
+        "n_cells": 164,
+        "n_trials": 5950
+      },
+      {
+        "area": "VISal",
+        "experiment_id": 501929146,
+        "n_cells": 172,
+        "n_trials": 5950
+      },
+      {
+        "area": "VISal",
+        "experiment_id": 502382906,
+        "n_cells": 161,
+        "n_trials": 5950
+      },
+      {
+        "area": "VISpm",
+        "experiment_id": 502254330,
+        "n_cells": 90,
+        "n_trials": 5950
+      },
+      {
+        "area": "VISpm",
+        "experiment_id": 503772253,
+        "n_cells": 128,
+        "n_trials": 5950
+      },
+      {
+        "area": "VISpm",
+        "experiment_id": 503866276,
+        "n_cells": 83,
+        "n_trials": 5950
+      },
+      {
+        "area": "VISam",
+        "experiment_id": 550374428,
+        "n_cells": 77,
+        "n_trials": 5950,
+        "n_images": 118,
+        "mean_reliability": 0.10489484230023823
+      },
+      {
+        "area": "VISam",
+        "experiment_id": 552318211,
+        "n_cells": 38,
+        "n_trials": 5950,
+        "n_images": 118,
+        "mean_reliability": 0.11636550343340107
+      },
+      {
+        "area": "VISam",
+        "experiment_id": 553012563,
+        "n_cells": 128,
+        "n_trials": 5950,
+        "n_images": 118,
+        "mean_reliability": 0.3046656314214218
+      },
+      {
+        "area": "VISrl",
+        "experiment_id": 554021353,
+        "n_cells": 208,
+        "n_trials": 5950,
+        "n_images": 118,
+        "mean_reliability": 0.06344770989386418
+      },
+      {
+        "area": "VISrl",
+        "experiment_id": 562222842,
+        "n_cells": 269,
+        "n_trials": 5950,
+        "n_images": 118,
+        "mean_reliability": 0.18260407380456525
+      },
+      {
+        "area": "VISrl",
+        "experiment_id": 569722788,
+        "n_cells": 134,
+        "n_trials": 5950,
+        "n_images": 118,
+        "mean_reliability": 0.6969634315319686
+      }
+    ],
+    "n_sessions": 18,
+    "git_sha": "37aade0b2b97c9ba57fd980d3c30786e9db26bbe"
+  },
+  "model_manifests": [
+    {
+      "model": "dino_vits16",
+      "layer": "block11",
+      "shape": [
+        118,
+        384
+      ],
+      "feature_hash": "cdce6acccb00daa4",
+      "git_sha": "unknown",
+      "family": "self_supervised",
+      "weights_id": "dino_deitsmall16_pretrain",
+      "task_objective": "self_supervised_dino",
+      "stimulus_hash": "003f1b4ff0411071"
+    },
+    {
+      "model": "dino_vits16",
+      "layer": "block2",
+      "shape": [
+        118,
+        384
+      ],
+      "feature_hash": "e2836216372fd874",
+      "git_sha": "unknown",
+      "family": "self_supervised",
+      "weights_id": "dino_deitsmall16_pretrain",
+      "task_objective": "self_supervised_dino",
+      "stimulus_hash": "003f1b4ff0411071"
+    },
+    {
+      "model": "dino_vits16",
+      "layer": "block5",
+      "shape": [
+        118,
+        384
+      ],
+      "feature_hash": "4fd02a998675f0c2",
+      "git_sha": "unknown",
+      "family": "self_supervised",
+      "weights_id": "dino_deitsmall16_pretrain",
+      "task_objective": "self_supervised_dino",
+      "stimulus_hash": "003f1b4ff0411071"
+    },
+    {
+      "model": "dino_vits16",
+      "layer": "block8",
+      "shape": [
+        118,
+        384
+      ],
+      "feature_hash": "9127255feced7925",
+      "git_sha": "unknown",
+      "family": "self_supervised",
+      "weights_id": "dino_deitsmall16_pretrain",
+      "task_objective": "self_supervised_dino",
+      "stimulus_hash": "003f1b4ff0411071"
+    },
+    {
+      "model": "gabor",
+      "layer": "raw",
+      "shape": [
+        118,
+        768
+      ],
+      "feature_hash": "71b14711007266e5",
+      "git_sha": "unknown",
+      "family": "classical",
+      "weights_id": "none",
+      "task_objective": "none",
+      "stimulus_hash": "003f1b4ff0411071"
+    },
+    {
+      "model": "pixels",
+      "layer": "raw",
+      "shape": [
+        118,
+        1024
+      ],
+      "feature_hash": "187b5df2fb993af5",
+      "git_sha": "unknown",
+      "family": "classical",
+      "weights_id": "none",
+      "task_objective": "none",
+      "stimulus_hash": "003f1b4ff0411071"
+    },
+    {
+      "model": "resnet18",
+      "layer": "avgpool",
+      "shape": [
+        118,
+        512
+      ],
+      "feature_hash": "f9e4ca465e0d3a95",
+      "git_sha": "unknown",
+      "family": "cnn_supervised",
+      "weights_id": "IMAGENET1K_V1",
+      "task_objective": "imagenet_classification",
+      "stimulus_hash": "003f1b4ff0411071"
+    },
+    {
+      "model": "resnet18",
+      "layer": "layer1",
+      "shape": [
+        118,
+        64
+      ],
+      "feature_hash": "f75ffc0edf7f9956",
+      "git_sha": "unknown",
+      "family": "cnn_supervised",
+      "weights_id": "IMAGENET1K_V1",
+      "task_objective": "imagenet_classification",
+      "stimulus_hash": "003f1b4ff0411071"
+    },
+    {
+      "model": "resnet18",
+      "layer": "layer2",
+      "shape": [
+        118,
+        128
+      ],
+      "feature_hash": "1a42f4aecf5a7ca9",
+      "git_sha": "unknown",
+      "family": "cnn_supervised",
+      "weights_id": "IMAGENET1K_V1",
+      "task_objective": "imagenet_classification",
+      "stimulus_hash": "003f1b4ff0411071"
+    },
+    {
+      "model": "resnet18",
+      "layer": "layer3",
+      "shape": [
+        118,
+        256
+      ],
+      "feature_hash": "41c2672813b95fe5",
+      "git_sha": "unknown",
+      "family": "cnn_supervised",
+      "weights_id": "IMAGENET1K_V1",
+      "task_objective": "imagenet_classification",
+      "stimulus_hash": "003f1b4ff0411071"
+    },
+    {
+      "model": "resnet18",
+      "layer": "layer4",
+      "shape": [
+        118,
+        512
+      ],
+      "feature_hash": "f9e4ca465e0d3a95",
+      "git_sha": "unknown",
+      "family": "cnn_supervised",
+      "weights_id": "IMAGENET1K_V1",
+      "task_objective": "imagenet_classification",
+      "stimulus_hash": "003f1b4ff0411071"
+    },
+    {
+      "model": "resnet50",
+      "layer": "avgpool",
+      "shape": [
+        118,
+        2048
+      ],
+      "feature_hash": "fa08d5e5c9e2522b",
+      "git_sha": "unknown",
+      "family": "cnn_supervised",
+      "weights_id": "IMAGENET1K_V2",
+      "task_objective": "imagenet_classification",
+      "stimulus_hash": "003f1b4ff0411071"
+    },
+    {
+      "model": "resnet50",
+      "layer": "layer1",
+      "shape": [
+        118,
+        256
+      ],
+      "feature_hash": "c6d4fa6ddfd24921",
+      "git_sha": "unknown",
+      "family": "cnn_supervised",
+      "weights_id": "IMAGENET1K_V2",
+      "task_objective": "imagenet_classification",
+      "stimulus_hash": "003f1b4ff0411071"
+    },
+    {
+      "model": "resnet50",
+      "layer": "layer2",
+      "shape": [
+        118,
+        512
+      ],
+      "feature_hash": "ab1dfe9f44355c48",
+      "git_sha": "unknown",
+      "family": "cnn_supervised",
+      "weights_id": "IMAGENET1K_V2",
+      "task_objective": "imagenet_classification",
+      "stimulus_hash": "003f1b4ff0411071"
+    },
+    {
+      "model": "resnet50",
+      "layer": "layer3",
+      "shape": [
+        118,
+        1024
+      ],
+      "feature_hash": "9d5860744fd4eef6",
+      "git_sha": "unknown",
+      "family": "cnn_supervised",
+      "weights_id": "IMAGENET1K_V2",
+      "task_objective": "imagenet_classification",
+      "stimulus_hash": "003f1b4ff0411071"
+    },
+    {
+      "model": "resnet50",
+      "layer": "layer4",
+      "shape": [
+        118,
+        2048
+      ],
+      "feature_hash": "fa08d5e5c9e2522b",
+      "git_sha": "unknown",
+      "family": "cnn_supervised",
+      "weights_id": "IMAGENET1K_V2",
+      "task_objective": "imagenet_classification",
+      "stimulus_hash": "003f1b4ff0411071"
+    },
+    {
+      "model": "vit_b_16",
+      "layer": "block11",
+      "shape": [
+        118,
+        768
+      ],
+      "feature_hash": "ff2104dd763643c2",
+      "git_sha": "unknown",
+      "family": "vit_supervised",
+      "weights_id": "IMAGENET1K_V1",
+      "task_objective": "imagenet_classification",
+      "stimulus_hash": "003f1b4ff0411071"
+    },
+    {
+      "model": "vit_b_16",
+      "layer": "block2",
+      "shape": [
+        118,
+        768
+      ],
+      "feature_hash": "4fad68a8e6744ac8",
+      "git_sha": "unknown",
+      "family": "vit_supervised",
+      "weights_id": "IMAGENET1K_V1",
+      "task_objective": "imagenet_classification",
+      "stimulus_hash": "003f1b4ff0411071"
+    },
+    {
+      "model": "vit_b_16",
+      "layer": "block5",
+      "shape": [
+        118,
+        768
+      ],
+      "feature_hash": "86343ccf976f83fe",
+      "git_sha": "unknown",
+      "family": "vit_supervised",
+      "weights_id": "IMAGENET1K_V1",
+      "task_objective": "imagenet_classification",
+      "stimulus_hash": "003f1b4ff0411071"
+    },
+    {
+      "model": "vit_b_16",
+      "layer": "block8",
+      "shape": [
+        118,
+        768
+      ],
+      "feature_hash": "1b5c22d16795b441",
+      "git_sha": "unknown",
+      "family": "vit_supervised",
+      "weights_id": "IMAGENET1K_V1",
+      "task_objective": "imagenet_classification",
+      "stimulus_hash": "003f1b4ff0411071"
+    }
+  ],
+  "config_hashes": {
+    "configs/dataset.yaml": "fd78d5dcb9e5ce35",
+    "configs/hypotheses.yaml": "c4728198ae4d111f"
+  },
+  "metrics_summary": {
+    "encoding_mean_r_by_model": {
+      "dino_vits16": 0.08186919468510218,
+      "gabor": 0.11038526860204173,
+      "pixels": 0.19896730615847696,
+      "resnet18": 0.09209692882563458,
+      "resnet50": 0.07689153793714874,
+      "vit_b_16": 0.08190160732968702
+    },
+    "n_encoding_rows": 360,
+    "rsa_mean_rho_by_model": {
+      "dino_vits16": 0.06341455383874632,
+      "gabor": -0.006113994925667671,
+      "pixels": 0.03009230827697769,
+      "resnet18": 0.06058203261979367,
+      "resnet50": 0.04586919872811289,
+      "vit_b_16": 0.03853000027278485
+    },
+    "n_rsa_rows": 360,
+    "n_compression_rows": 324
+  },
+  "figures": [
+    "area_model_heatmap.png",
+    "brain_region_comparison.png",
+    "compression_curves.png",
+    "layer_depth_curves.png",
+    "noise_ceiling_comparison.png",
+    "ranking_uncertainty.png",
+    "rsa_matrix.png",
+    "stimulus_residuals.png"
+  ],
+  "paper_exists": true,
+  "paper_hash": "f0c825a9c5a4836f"
+}
